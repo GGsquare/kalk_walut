@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Kalkulator wymiany waluty</title>
+</head>
+
+<body style="background-color:lightslategrey">
+<div class="container">
+  <h1 style="text-align: center;color: rgb(2, 112, 88);"><u>Kalkulator walut</u></h1>
+
+    <h3 style = "text-align: center">Wybierz, czy chcesz kupić czy sprzedać, a następnie wpisz ilość oraz wybierz walutę.</h3>
+
+  <form action="/" method="post" enctype=multipart/form-data>
+  <h2>Chcę kupić:</h2>
+  Mam:<input type="number" placeholder="Wpisz wartość" name="amount" min="0" value="{{amount}}" required="required">PLN,
+  <label for="code">Chcę mieć:</label>
+  <select name="exchange" id="exchange">
+    <option value="Dumbass!">Choose Currency</option>
+    {% if exchange_name %}
+    <option value="{{exchange_code}}" selected>{{exchange_name}}</option>
+    {% endif %}
+    <option value="USD">Dolar Amerykański</option>
+    <option value="AUD">Dolar Australijski</option>
+    <option value="CAD">Dolar Kanadyjski</option>
+    <option value="EUR">Euro</option>
+    <option value="HUF">Forint (Węgry)</option>
+    <option value="CHF">Frank Szwajcarski</option>
+    <option value="GBP">Funt Szterling</option>
+    <option value="JPY">Jen (Japonia)</option>
+    <option value="CZK">Korona Czeska</option>
+    <option value="DKK">Korona Duńska</option>
+    <option value="NOK">Korona Norweska</option>
+    <option value="SEK">Korona Szwedzka</option>
+    <option value="XDR">SDR (MFW)</option>
+    <option value="PLN">Polski Złoty</option>
+  </select>
+Po wymianie otrzymam:<input type="number" placeholder="Result" style="background-color:cornsilk;color:mediumblue;font-weight:bold" value="{{result}}" readonly>
+  <input type="submit" style="width: 60px;height: 30px;" value="Convert">
+</form>
+<form action="/" method="post" enctype=multipart/form-data>
+  <h2>Chcę sprzedać:</h2>
+  Mam:<input type="number" placeholder="Wpisz wartość" name="amount2" min="0" value="{{amount2}}" required="required">
+  <label for="code">W walucie:</label>  
+  <select name="sell" id="sell">
+    <option value="Dumbass!">Choose Currency</option>
+    {% if sell_name %}
+    <option value="{{sell_code}}" selected>{{sell_name}}</option>
+    {% endif %}
+    <option value="USD">Dolar Amerykański</option>
+    <option value="AUD">Dolar Australijski</option>
+    <option value="CAD">Dolar Kanadyjski</option>
+    <option value="EUR">Euro</option>
+    <option value="HUF">Forint (Węgry)</option>
+    <option value="CHF">Frank Szwajcarski</option>
+    <option value="GBP">Funt Szterling</option>
+    <option value="JPY">Jen (Japonia)</option>
+    <option value="CZK">Korona Czeska</option>
+    <option value="DKK">Korona Duńska</option>
+    <option value="NOK">Korona Norweska</option>
+    <option value="SEK">Korona Szwedzka</option>
+    <option value="XDR">SDR (MFW)</option>
+    <option value="PLN">Polski Złoty</option>
+  </select>
+  Po wymianie otrzymam:<input type="number" placeholder="Result2" style="background-color:cornsilk;color:mediumblue;font-weight:bold" value="{{result2}}" readonly>PLN
+  <input type="submit" formaction="/2/" style="width: 60px;height: 30px;" value="Convert">
+  </form>
+</div>
+</body>
+</html>
